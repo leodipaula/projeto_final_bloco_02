@@ -20,12 +20,12 @@ public class CategoriaService {
     @Autowired
     private CategoriaMapper categoriaMapper;
 
-    public Optional<Categoria> cadastrarCategoria(Categoria categoria) {
-        if (categoriaRepository.findByTituloIgnoreCase(categoria.getTitulo()).isPresent()) {
+    public Optional<Categoria> cadastrarCategoria(CategoriaDTO categoriaDTO) {
+        if (categoriaRepository.findByTituloIgnoreCase(categoriaDTO.titulo()).isPresent()) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
                     "Já existe categoria com esse título");
         }
-        return Optional.of(categoriaRepository.save(categoria));
+        return Optional.of(categoriaRepository.save(new Categoria(categoriaDTO)));
     }
 
     public List<Categoria> listarCategorias() {

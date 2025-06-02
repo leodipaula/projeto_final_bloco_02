@@ -30,7 +30,7 @@ public class CategoriaController {
     private CategoriaService categoriaService;
 
     @PostMapping("/cadastrar")
-    public ResponseEntity<Categoria> post(@Valid @RequestBody Categoria categoria) {
+    public ResponseEntity<Categoria> post(@Valid @RequestBody CategoriaDTO categoria) {
         return categoriaService.cadastrarCategoria(categoria)
                 .map(resposta -> ResponseEntity.status(HttpStatus.CREATED).body(resposta))
                 .orElse(ResponseEntity.status(HttpStatus.BAD_REQUEST).build());

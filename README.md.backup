@@ -1,0 +1,55 @@
+﻿
+# Projeto Final Bloco 02 - CRUD Farmácia
+
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+
+Repositório do projeto final do Bloco 02 do curso da Generation Brasil: um **CRUD completo para gestão de farmácias** desenvolvido em Java.
+
+## 📋 Descrição
+
+Sistema de gerenciamento de farmácias com operações básicas de:
+- **C**reate (Cadastrar)
+- **R**ead (Listar)
+- **U**pdate (Atualizar)
+- **D**elete (Remover)
+
+Desenvolvido como projeto de conclusão do módulo de Java básico.
+
+## 🛠 Tecnologias
+
+- **Linguagem**: Java
+- **IDE**: Eclipse/IntelliJ/VSCode
+- **Versionamento**: Git/GitHub
+
+## 🔌 Endpoints (Exemplo)
+
+```
+GET    /farmacias       - Listar todas
+POST   /farmacias       - Cadastrar nova
+PUT    /farmacias/{id}  - Atualizar por ID
+DELETE /farmacias/{id}  - Remover por ID
+```
+
+## 🚀 Execução
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/leodipaula/projeto_final_bloco_02.git
+```
+
+2. Importe o projeto na sua IDE Java favorita
+
+3. Execute a classe principal `Main.java`
+
+## 🤝 Contribuição
+Contribuições são bem-vindas! Abra uma issue ou envie um PR.
+
+## 📄 Licença
+Este projeto está sob licença MIT - veja [LICENSE](LICENSE) para detalhes.
+
+---
+Desenvolvido por [Leonardo Paula](https://github.com/leodipaula)  
+Como parte do programa Generation Brasil 👩‍💻
+``` 
+
+*Observação: Adapte os endpoints e detalhes de execução conforme a arquitetura real do projeto.*

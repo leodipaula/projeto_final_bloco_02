@@ -2,6 +2,7 @@ package com.leodipaula.e_farma.model;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.leodipaula.e_farma.dto.CategoriaDTO;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -25,15 +26,22 @@ public class Categoria {
     private Long id;
 
     @NotBlank(message = "O título não pode estar vazio")
-    @Size(min = 3, max = 100)
+    @Size(max = 100)
     @Column(unique = true)
     private String titulo;
 
     @NotBlank(message = "A descrição não pode estar vazia")
-    @Size(min = 10, max = 200)
+    @Size(max = 200)
     private String descricao;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "categoria", cascade = CascadeType.REMOVE)
     @JsonIgnoreProperties("categoria")
     private List<Produto> produto;
+
+    public Categoria(CategoriaDTO dto) {
+        this.titulo = dto.titulo();
+        this.descricao = dto.descricao();
+    }
+
+    public Categoria() {}
 }
